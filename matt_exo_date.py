@@ -16,3 +16,24 @@ nb_second = number % 60
 
 print(nb_hour, "h", nb_minute, "m", nb_second, "s")
 # %%
+## techniques de formatage de chaînes de caractères
+## %%
+# templating old-school (python2)
+template = "%dh, %dm, %ds"
+## tpl % (...)
+# %: opérateur de formatage
+# (...): tuple
+# (x, y): paire, (x, y, z): triplet (x1, ..., xt) => t-uplet 
+# structure ordonnée de valeurs de types disparates
+# NON MODIFIABLE => immutable
+print(template % (nb_hour, nb_minute, nb_second) )
+# %%
+# templating version python3
+# {}: emplacement réservé pour les paramètres
+template = "{}h, {}m, {}s"
+print(template.format(nb_hour, nb_minute, nb_second))
+# %%
+# f-strings
+print(f"{nb_hour + 2}h, {nb_minute}m {nb_second}s")
+
+# %%
