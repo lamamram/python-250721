@@ -102,3 +102,15 @@ phrase = " ".join(mots)
 ## in, slicing [:], .index(), .count(), fonctionne avec les str et tuples
 phrase[3:10], phrase.count("chat")
 # %%
+
+# itérer sur les éléments d'une liste ou d'un tuple ou d'une str
+# pour chaque élément appelé "mot" dans liste "mots"
+## on itère en consumant les élements des structures itérables (str, list, tupole)
+for mot in mots:
+  print(mot)
+
+print("fin de la boucle")
+
+for letter in phrase:
+  print(letter)
+# %%
