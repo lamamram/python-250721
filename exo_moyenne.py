@@ -20,9 +20,24 @@ saisie
 liste = saisie.split(",")
 liste
 # %%
+# initialiser une liste vide pour stocker les valeurs valides
+ints = []
+
 for valeur in liste:
+  # enlever les espaces autour de la valeur
+  valeur = valeur.strip()
   # si la valeur est un entier positif ou négatif
   # négatif == 1er caractère "-" ET le reste est numérique
   if valeur.isnumeric() or ( valeur[0] == "-" and valeur[1:].isnumeric()):
-    valeur = int(valeur)
+    # ajouter la valeur convertie
+    ints.append(int(valeur))
+# %%
+# total = 0
+# for nb in ints:
+#   total += nb
+# print(total / len(ints))
+# if len(ints) != 0:
+if len(ints):
+  avg = sum(ints) / len(ints)
+  print(f"la moyenne est {round(avg, 2)}")
 # %%
