@@ -41,3 +41,19 @@ if len(ints):
   avg = sum(ints) / len(ints)
   print(f"la moyenne est {round(avg, 2)}")
 # %%
+## version avec break => on ne veut que des valeurs valides !!!
+
+ints = []
+
+for valeur in liste:
+  valeur = valeur.strip()
+  if valeur.isnumeric() or ( valeur[0] == "-" and valeur[1:].isnumeric()):
+    ints.append(int(valeur))
+  else:
+    print(f"{valeur} n'est pas convertible !!!")
+    break
+else:
+  if len(ints):
+    avg = sum(ints) / len(ints)
+    print(f"la moyenne est {round(avg, 2)}")
+# %%
