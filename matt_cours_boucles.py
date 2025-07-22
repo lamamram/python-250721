@@ -44,3 +44,28 @@ for i, fruit in enumerate(fruits):
   fruits[i] = fruit.upper()
 fruits
 # %%
+fruits = ["pomme", "poire", "cerise", "orange"]
+# liste en intension => définition des valeurs qu'on veut voire
+# sucre syntaxique
+# je veux créer des variables f.upper() prises dans les valeurs de la liste fruits
+# avec un filtre (fruits qui commencent par "p")
+fruits = [ f.upper() for f in fruits if f[0] == "p" ]
+fruits
+# %%
+for i in range(2, 10):
+  # regarder les entiers diviseurs possible depuis 1 vers i (en fait jusqu'à i//2 + 1)
+  for j in range(2, i):
+    # pas premier car j divise i
+    if j >= i // 2 + 1:
+      # pas besoin de regarder parce que j est trop grand pour divise de façon entière i
+      # on arrête l'itération courante du for courant et on continue avec l'itération suivante
+      continue
+    print(f"{j} est candidat divisueur possible de {i}")
+    if i % j == 0:
+      # j'interromps le for courant et je sors du for courant
+      break
+  # le else sur le for ne s'exécute que si le for associé se termine sans break
+  # autrement dit le for associé est itérée jusqu'au bout
+  else:
+    print(f"{i} est premier !!!")
+# %%
