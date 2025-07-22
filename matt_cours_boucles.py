@@ -53,11 +53,11 @@ fruits = [ f.upper() for f in fruits if f[0] == "p" ]
 fruits
 # %%
 for i in range(2, 10):
-  # regarder les entiers diviseurs possible depuis 1 vers i (en fait jusqu'à i//2 + 1)
+  # regarder les entiers diviseurs possible depuis 2 jusqu'à i (en fait jusqu'à i//2 + 1)
   for j in range(2, i):
     # pas premier car j divise i
     if j >= i // 2 + 1:
-      # pas besoin de regarder parce que j est trop grand pour divise de façon entière i
+      # pas besoin de regarder parce que j est trop grand pour diviser de façon entière i
       # on arrête l'itération courante du for courant et on continue avec l'itération suivante
       continue
     print(f"{j} est candidat divisueur possible de {i}")
