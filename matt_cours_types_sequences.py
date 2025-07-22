@@ -114,3 +114,62 @@ print("fin de la boucle")
 for letter in phrase:
   print(letter)
 # %%
+
+## reprendre l'exemple du patient avec un dictonnaire
+patient = {
+  "first_name": "pierre",
+  "last_name": "dupont",
+  "age": 33,
+  "height": 1.76
+}
+patient
+# %%
+patient["first_name"]
+# %%
+# une clé peut être autre chose qu'une str !!!
+points = {
+  (-2.4303, 47.4354): "PARIS",
+  (-1.6345, 42.4544): "MARSEILLE"
+}
+
+## 
+patient["first_name"] = "jean"
+print(dir(patient))
+patient, type(patient)
+
+
+# %%
+# l'opérateur in foncitonne avec les clés et pas les valeurs
+print("jean" in patient)
+print("first_name" in patient)
+# %%
+# print(patient["weight"])
+
+# if "weight" in patient:
+#   print(patient["weight"])
+# else:
+#   print(60)
+
+# retourner la valeur d'une clé OU une valeur par défaut SINON
+print(patient.get("weight", 60))
+print(patient.get("height", 1.70))
+# %%
+# a priori on itère sur les clés
+print("----keys-----")
+for x in patient:
+  print(x)
+print("----values-----")
+for v in patient.values():
+  print(v)
+print("----items (key, value)-----")
+for k, v in patient.items():
+  print(k, v)
+# %%
+# dict => list
+list(patient.items())
+# %%
+# list[tuple(2)] => dict
+
+paires = [("key1", "value1"), ("key2", "value2")]
+dict(paires)
+# %%
