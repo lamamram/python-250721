@@ -60,7 +60,7 @@ for i in range(2, 10):
       # pas besoin de regarder parce que j est trop grand pour diviser de façon entière i
       # on arrête l'itération courante du for courant et on continue avec l'itération suivante
       continue
-    print(f"{j} est candidat divisueur possible de {i}")
+    print(f"{j} est candidat diviseur possible de {i}")
     if i % j == 0:
       # j'interromps le for courant et je sors du for courant
       break
@@ -68,4 +68,33 @@ for i in range(2, 10):
   # autrement dit le for associé est itérée jusqu'au bout
   else:
     print(f"{i} est premier !!!")
+# %%
+
+temp = int(input("saisir une temperature en °C: "))
+
+# tant que la température est inférieure à 100 on boucle sur le bloc du while
+while temp <= 100:
+  if temp <= 25:
+    print(f"{temp} trop froid pour avancer !!!")
+    # il faut au - une instruction qui peut changer la condition d'arrêt de la boucle while
+    temp = int(input("saisir temp °C: "))
+    continue
+  print(f"{temp}: on avance")
+  temp -= 10
+
+print(f"{temp}: BOOM")
+# %%
+temp = int(input("saisir une temperature en °C: "))
+
+# si on utilise une boucle infinie alors on a besoin d'un break
+while True:
+  if temp > 100:
+    print(f"{temp}: BOOM")
+    break
+  if temp <= 25:
+    print(f"{temp} trop froid pour avancer !!!")
+    temp = int(input("saisir temp °C: "))
+    continue
+  print(f"{temp}: on avance")
+  temp -= 10
 # %%
