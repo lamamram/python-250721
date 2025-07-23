@@ -56,9 +56,22 @@ def parse_template(tpl, injects, delim, default):
         key = tpl[start_index + 2:end_index]
         val = injects.get(key, default)
 
-        tpl = tpl.replace(delim[0] + key + delim[1], val)
+        tpl = tpl.replace(delim[0] + key + delim[1], str(val))
     return tpl
 
+# %%
 _template = parse_template(_template, injections, ("((","))"), "N/A")
 _template
+# %%
+truc = """
+machin {{k1}}
+bidule {{k2}}
+"""
+
+data = {
+    "k1": 33,
+    "k2": 3.14
+}
+
+print(parse_template(truc, data, ("{{", "}}"), ""))
 # %%
