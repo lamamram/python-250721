@@ -12,16 +12,16 @@ par la clé correspondante si celle ci existe ou par N/A
 # %%
 
 _template = """
-lorem ipsum (blabla) ... ((key1)) blabla ....
-lorem ipsum (blabla) ... ((key2)) blabla ....
-lorem ipsum (blabla) ... ((key3)) blabla ....
-lorem ipsum (blabla) ... ((key4)) blabla ....
+robinet.pression=((pression))
+robinet.section=((section))
+robinet.debit=((debit))
+robinet.capacite=((capacite))
 """
 
 injections = {
-    "key1": "content1",
-    "key2": "content2",
-    "key3": "content3"
+    "pression": "500",
+    "section": "30",
+    "debit": "2"
 }
 
 # %%
