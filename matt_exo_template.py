@@ -25,7 +25,8 @@ injections = {
 }
 
 # %%
-
+# pour tester avec un petit nb d'itérations
+# i = 0
 # while _template.find("((") != -1:
 while _template.count("(("):
     start_index = _template.index("((")
@@ -35,6 +36,9 @@ while _template.count("(("):
     val = injections.get(key, "N/A")
 
     _template = _template.replace("((" + key + "))", val)
+    # if i > 10:
+    #   break
+    # i += 1
 
 print(_template)
 # %%
