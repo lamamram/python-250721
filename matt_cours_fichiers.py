@@ -33,3 +33,25 @@ for i in range(len(user)):
 with open("./users.csv", mode="a", encoding="utf-8") as f:
   f.write(";".join(user))
 # %%
+import csv
+
+with open("./users.csv", mode="r", encoding="utf-8") as f:
+  rd = csv.reader(f, delimiter=";", quotechar='"')
+  # itération pas à pas du reader (ou de n'importe quel itérable)
+  lines = []
+  header = next(rd)
+  for line in rd:
+    lines.append(line)
+# %%
+
+import csv
+
+with open("./users.csv", mode="r", encoding="utf-8") as f:
+  rd = csv.reader(f, delimiter=";", quotechar='"')
+  # itération pas à pas du reader (ou de n'importe quel itérable)
+  lines = []
+  header = next(rd)
+  for line in rd:
+    lines.append(line)
+
+
