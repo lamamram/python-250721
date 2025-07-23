@@ -44,5 +44,5 @@ print(project.utils.parse_template(truc, data))
 # %%
 from project.utils import parse_template
 
-print(parse_template(truc, data))
+print(parse_template(truc, data, debug=True))
 # %%

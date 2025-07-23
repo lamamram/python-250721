@@ -5,6 +5,9 @@ DEFAULT
 parse_template
 """
 
+## les imports sont TOUJOURS calculés depuis le programme principal
+from project.helpers.logger import log
+
 DEFAULT = "N/A"
 
 def parse_template(
@@ -24,7 +27,7 @@ def parse_template(
         end_index = tpl.index(delim[1])
         key = tpl[start_index + len(delim[0]):end_index]
         if "debug" in opts and opts["debug"]:
-            print(f"key: {key}")
+            log(f"key: {key}")
         val = injects.get(key, default)
 
         tpl = tpl.replace(delim[0] + key + delim[1], str(val))
