@@ -85,3 +85,12 @@ print(nb)
 
 ## on préfère ajoute des paramètres et un return
 # %%
+# paramètres positionnels et optionnels à la définition
+
+def ma_fonc(pos1, pos2, opt="default"):
+  print(pos1, pos2, opt)
+
+ma_fonc(10, 3.13, "truc")
+ma_fonc(10, 3.13)
+ma_fonc(10)
+# %%

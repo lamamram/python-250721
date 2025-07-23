@@ -48,12 +48,18 @@ print(_template)
 # 2/ remplacer les variables globales avec un paramètre (refactoring: remplacer avec ctrl+H)
 # 3/ remplacer les valeurs littérales qui peuvent varier
 # 4/ remplacer le print en return et utiliser l'appel
+# 5/ utiliser des param optionnels (valeurs par défaut)
+# 6/ annotations et docstring
 
-def parse_template(tpl, injects, delim, default):
+def parse_template(tpl: str, injects: dict, delim: tuple=("{{","}}"), default: str="N/A") -> str:
+    """
+    fonction d'interprétation d'un fichier template pour injecter
+    des valeurs venues d'un diction
+    """
     while tpl.count(delim[0]):
         start_index = tpl.index(delim[0])
         end_index = tpl.index(delim[1])
-        key = tpl[start_index + 2:end_index]
+        key = tpl[start_index + len(delim[0]):end_index]
         val = injects.get(key, default)
 
         tpl = tpl.replace(delim[0] + key + delim[1], str(val))
@@ -66,6 +72,7 @@ _template
 truc = """
 machin {{k1}}
 bidule {{k2}}
+nawak {{k3}}
 """
 
 data = {
@@ -73,5 +80,5 @@ data = {
     "k2": 3.14
 }
 
-print(parse_template(truc, data, ("{{", "}}"), ""))
+print(parse_template(truc, data))
 # %%
