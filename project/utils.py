@@ -5,8 +5,10 @@ DEFAULT
 parse_template
 """
 
-## les imports sont TOUJOURS calculés depuis le programme principal
-from project.helpers.logger import log
+## les imports sont TOUJOURS calculés depuis le programme principal => matt_cours_modules_packages.py ICI
+# from project.helpers.logger import log
+## OU un import relatif (. ou ..)
+from .helpers.logger import log
 
 DEFAULT = "N/A"
 
