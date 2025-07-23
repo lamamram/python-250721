@@ -42,3 +42,23 @@ while _template.count("(("):
 
 print(_template)
 # %%
+# créer une fonction à partie de la cellule ci dessous
+
+# 1/ enapsuler le code ave un def et un nom():
+# 2/ remplacer les variables globales avec un paramètre (refactoring: remplacer avec ctrl+H)
+# 3/ remplacer les valeurs littérales qui peuvent varier
+# 4/ remplacer le print en return et utiliser l'appel
+
+def parse_template(tpl, injects, delim, default):
+    while tpl.count(delim[0]):
+        start_index = tpl.index(delim[0])
+        end_index = tpl.index(delim[1])
+        key = tpl[start_index + 2:end_index]
+        val = injects.get(key, default)
+
+        tpl = tpl.replace(delim[0] + key + delim[1], val)
+    return tpl
+
+_template = parse_template(_template, injections, ("((","))"), "N/A")
+_template
+# %%

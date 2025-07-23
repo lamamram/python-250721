@@ -63,3 +63,25 @@ def deux_fois(nb: int|float):
 deux_fois({})
 deux_fois(2)
 # %%
+# notion de portée
+# nb est globale (extrieure) à la fonction
+nb = 2
+
+def fois_deux():
+  # a priori nb est locale (interne à la fonction)
+  # sauf si onajoute 
+  # global nb
+  nb = 2
+  nb *= 2
+  print(nb)
+
+
+fois_deux()
+print(nb)
+
+## on utilise global pour des fonctions que ne retournent pas
+## MAIS modifie des variables globales
+## fonction san retour => procédure
+
+## on préfère ajoute des paramètres et un return
+# %%
