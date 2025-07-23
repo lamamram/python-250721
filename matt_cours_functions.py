@@ -69,7 +69,7 @@ nb = 2
 
 def fois_deux():
   # a priori nb est locale (interne à la fonction)
-  # sauf si onajoute 
+  # sauf si on ajoute 
   # global nb
   nb = 2
   nb *= 2
@@ -93,4 +93,24 @@ def ma_fonc(pos1, pos2, opt="default"):
 ma_fonc(10, 3.13, "truc")
 ma_fonc(10, 3.13)
 ma_fonc(10)
+# %%
+# option variadic *args:
+# permet d'appeler une fonction avec 1 ou plusieurs paramètres positionnels 
+# ces paramètres sont stockés dans un tuple
+def ma_fonc(*param):
+  print(param)
+
+ma_fonc(2)
+print(2)
+ma_fonc(2, 3, "truc")
+print(2, 3, "truc")
+# %%
+# option variadic **kw
+# permet d'appeler une fonction avec 1 ou plusieurs paramètres optionnels 
+# ces paramètres sont stockés dans un dictionnaire
+def ma_fonc(param, **opts):
+  print(param, opts)
+
+ma_fonc(1, opt1=2)
+ma_fonc(1, opt1=2, opt2="truc")
 # %%
