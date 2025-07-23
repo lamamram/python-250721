@@ -45,13 +45,12 @@ with open("./users.csv", mode="r", encoding="utf-8") as f:
 # %%
 
 import csv
-
-with open("./users.csv", mode="r", encoding="utf-8") as f:
-  rd = csv.reader(f, delimiter=";", quotechar='"')
-  # itération pas à pas du reader (ou de n'importe quel itérable)
-  lines = []
-  header = next(rd)
-  for line in rd:
-    lines.append(line)
+# pour utiliser le writer csv sur windows => ajouter newline="" désactive le saut de ligne sur f
+with open("./clone_users.csv", mode="w", encoding="utf-8", newline="") as f:
+  wr = csv.writer(f, delimiter=";", quotechar='"')
+  wr.writerow(header)
+  wr.writerows(lines)
 
 
+
+# %%
